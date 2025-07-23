@@ -3,8 +3,9 @@ import 'package:fruits_hub/Features/on_boarding/domain/entites/page_view_item_en
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key, required this.pageViewItemEntity});
+  const PageViewItem({super.key, required this.pageViewItemEntity, required this.isVisible});
   final PageViewItemEntity pageViewItemEntity;
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,9 +29,12 @@ class PageViewItem extends StatelessWidget {
                   pageViewItemEntity.image,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text('تخط'),
+              Visibility(
+                visible: isVisible,
+                child: const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text('تخط'),
+                ),
               ),
             ],
           ),
