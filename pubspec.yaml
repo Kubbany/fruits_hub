@@ -31,6 +31,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   svg_flutter: ^0.0.1
 
 dev_dependencies:
@@ -92,3 +94,5 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/images/app_icon.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
+flutter_intl:
+  enabled: true
