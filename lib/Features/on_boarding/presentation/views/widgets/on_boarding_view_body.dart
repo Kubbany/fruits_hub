@@ -2,6 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/Features/authentication/presentation/views/login_view.dart';
 import 'package:fruits_hub/Features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/prefs.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_button.dart';
 
@@ -19,6 +21,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   @override
   initState() {
     super.initState();
+    Prefs.setBool(kSkipOnBoarding, true);
     pageController = PageController();
     pageController.addListener(
       () {
