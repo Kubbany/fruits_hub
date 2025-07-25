@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class PageViewItemEntity {
   final String subtitle, image, backgroundImage;
@@ -12,7 +14,7 @@ class PageViewItemEntity {
     required this.title,
   });
 
-  static const List<PageViewItemEntity> pageViewItems = <PageViewItemEntity>[
+  static List<PageViewItemEntity> pageViewItems = <PageViewItemEntity>[
     PageViewItemEntity(
       image: Assets.imagesPageViewItem1Image,
       backgroundImage: Assets.imagesPageViewItem1BackgroundImage,
@@ -21,13 +23,22 @@ class PageViewItemEntity {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('مرحبًا بك في'),
-          Text('Fruit'),
-          Text('HUB'),
+          const Text(
+            'مرحبًا بك في',
+            style: TextStyles.bold23,
+          ),
+          Text(
+            ' HUB',
+            style: TextStyles.bold23.copyWith(color: AppColors.secondaryColor),
+          ),
+          Text(
+            'Fruit',
+            style: TextStyles.bold23.copyWith(color: AppColors.primaryColor),
+          ),
         ],
       ),
     ),
-    PageViewItemEntity(
+    const PageViewItemEntity(
       image: Assets.imagesPageViewItem2Image,
       backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
       subtitle:

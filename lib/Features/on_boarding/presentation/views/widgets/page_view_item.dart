@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/Features/on_boarding/domain/entites/page_view_item_entity.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart' show TextStyles;
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -31,9 +32,14 @@ class PageViewItem extends StatelessWidget {
               ),
               Visibility(
                 visible: isVisible,
-                child: const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text('تخط'),
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    'تخط',
+                    style: TextStyles.regular13.copyWith(
+                      color: const Color(0xFF949D9E),
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -48,11 +54,14 @@ class PageViewItem extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 16,
+            horizontal: 37,
           ),
           child: Text(
             pageViewItemEntity.subtitle,
             textAlign: TextAlign.center,
+            style: TextStyles.semiBold13.copyWith(
+              color: const Color(0xFF4E5456),
+            ),
           ),
         ),
       ],

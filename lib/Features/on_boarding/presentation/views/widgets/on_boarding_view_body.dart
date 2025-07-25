@@ -43,7 +43,6 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         Expanded(
           child: OnBoardingPageView(
             pageController: pageController,
-            currentPage: currentPage,
           ),
         ),
         DotsIndicator(
