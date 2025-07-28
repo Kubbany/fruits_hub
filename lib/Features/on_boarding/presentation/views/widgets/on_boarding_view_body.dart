@@ -21,7 +21,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   @override
   initState() {
     super.initState();
-    Prefs.setBool(kSkipOnBoarding, true);
+
     pageController = PageController();
     pageController.addListener(
       () {
@@ -71,6 +71,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             child: CustomButton(
               title: 'ابدأ الان',
               onPressed: () {
+                Prefs.setBool(kSkipOnBoarding, true);
                 Navigator.of(context).pushReplacementNamed(LoginView.routeName);
               },
               borderRadius: 16,
