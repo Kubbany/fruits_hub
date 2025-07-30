@@ -10,7 +10,7 @@ abstract class TextFormFieldStyle {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(6),
       borderSide: const BorderSide(
-        width: 1.1,
+        width: 1,
         color: Color(0xFFE6E9E9),
       ),
     );

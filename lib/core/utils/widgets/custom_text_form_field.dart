@@ -10,8 +10,10 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       keyboardType: keyboardType,
       decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextFormFieldStyle.hintStyle,
+        hint: Text(
+          hintText,
+          style: TextFormFieldStyle.hintStyle,
+        ),
         filled: TextFormFieldStyle.filled,
         fillColor: TextFormFieldStyle.fillColor,
         border: TextFormFieldStyle.buildBorder(),
