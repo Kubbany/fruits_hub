@@ -10,15 +10,16 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       keyboardType: keyboardType,
       decoration: InputDecoration(
-        hint: Text(
-          hintText,
-          style: TextFormFieldStyle.hintStyle,
-        ),
+        hintText: hintText,
+        hintStyle: TextFormFieldStyle.hintStyle,
         filled: TextFormFieldStyle.filled,
         fillColor: TextFormFieldStyle.fillColor,
         border: TextFormFieldStyle.buildBorder(),
         enabledBorder: TextFormFieldStyle.buildBorder(),
         focusedBorder: TextFormFieldStyle.buildBorder(),
+        disabledBorder: TextFormFieldStyle.buildBorder(),
+        errorBorder: TextFormFieldStyle.buildBorder(),
+        focusedErrorBorder: TextFormFieldStyle.buildBorder(),
       ),
     );
   }

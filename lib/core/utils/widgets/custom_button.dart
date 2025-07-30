@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
     required this.backgroundColor,
     this.titleSize,
     this.buttonHeight,
+    this.buttonWidth,
     this.borderSideWidth,
     this.isLoading = false,
   });
@@ -23,43 +24,47 @@ class CustomButton extends StatelessWidget {
   final double borderRadius;
   final double? titleSize;
   final double? buttonHeight;
+  final double? buttonWidth;
   final double? borderSideWidth;
   final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        minimumSize: buttonHeight == null ? null : Size(double.infinity, buttonHeight!),
-        backgroundColor: backgroundColor,
-        shape: RoundedRectangleBorder(
-          side: borderColor != null
-              ? BorderSide(
-                  color: borderColor!,
-                  width: borderSideWidth ?? 2.5,
-                )
-              : BorderSide.none,
-          borderRadius: BorderRadius.all(
-            Radius.circular(borderRadius),
+    return SizedBox(
+      width: buttonWidth ?? double.infinity,
+      height: buttonHeight,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            side: borderColor != null
+                ? BorderSide(
+                    color: borderColor!,
+                    width: borderSideWidth ?? 2.5,
+                  )
+                : BorderSide.none,
+            borderRadius: BorderRadius.all(
+              Radius.circular(borderRadius),
+            ),
           ),
         ),
+        onPressed: onPressed,
+        child: isLoading
+            ? const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
+            : Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: titleSize,
+                  color: titleColor ?? Colors.white,
+                ),
+              ),
       ),
-      onPressed: onPressed,
-      child: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(
-                color: Colors.white,
-              ),
-            )
-          : Text(
-              title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: titleSize,
-                color: titleColor ?? Colors.white,
-              ),
-            ),
     );
   }
 }

@@ -25,6 +25,9 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
         border: TextFormFieldStyle.buildBorder(),
         enabledBorder: TextFormFieldStyle.buildBorder(),
         focusedBorder: TextFormFieldStyle.buildBorder(),
+        disabledBorder: TextFormFieldStyle.buildBorder(),
+        errorBorder: TextFormFieldStyle.buildBorder(),
+        focusedErrorBorder: TextFormFieldStyle.buildBorder(),
         suffixIcon: IconButton(
           icon: Icon(
             !isVisiblePassword ? Icons.visibility : Icons.visibility_off,
