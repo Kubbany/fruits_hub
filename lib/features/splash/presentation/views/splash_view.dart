@@ -3,11 +3,13 @@ import 'package:fruits_hub/features/splash/presentation/widgets/splash_view_body
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
-
+  static const String routeName = 'splash_view';
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SplashViewBody(),
+      body: SafeArea(
+        child: SplashViewBody(),
+      ),
     );
   }
 }
